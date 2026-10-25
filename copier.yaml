@@ -1,0 +1,6 @@
+_exclude:
+  - '.git'
+  - '.gitignore'
+  - 'copier.yaml'
+  - 'LICENSE'
+  - 'README.md'
