@@ -13,12 +13,17 @@ copier copy gh:jochenklar/agent agent
 Create a `.env` file with at least an `AGENT=(pi|opencode|claude|codex|tau)` variable,
 which decides which agent is used.
 
+Local paths (e.g. skills or config files) can be mounted into the containers
+using a `volumes.yaml` file, which is merged with `compose.yaml` if it exists.
+Since only the service for the selected `AGENT` is started, the sections for
+several agents can be combined in this one file.
+
 Mounting local paths and configuring local models differs by agent:
 
 ### Pi.dev
 
 ```yaml
-# pi.yaml
+# volumes.yaml
 services:
   pi:
     volumes:
@@ -74,7 +79,7 @@ For MLX use:
 ### OpenCode
 
 ```yaml
-# opencode.yaml
+# volumes.yaml
 services:
   opencode:
     volumes:
@@ -109,7 +114,7 @@ To use local models with Ollama use a `opencode.json` like this:
 ### Claude Code
 
 ```yaml
-# claude.yaml
+# volumes.yaml
 services:
   claude:
     volumes:
@@ -119,7 +124,7 @@ services:
 ### Codex
 
 ```yaml
-# codex.yaml
+# volumes.yaml
 services:
   codex:
     volumes:
@@ -129,7 +134,7 @@ services:
 ### Tau
 
 ```yaml
-# tau.yaml
+# volumes.yaml
 services:
   tau:
     volumes:
