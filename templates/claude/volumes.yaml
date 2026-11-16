@@ -1,0 +1,4 @@
+services:
+  claude:
+    volumes:
+    - ./AGENTS.md:/home/agent/.claude/CLAUDE.md

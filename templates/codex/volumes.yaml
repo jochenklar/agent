@@ -1,0 +1,4 @@
+services:
+  codex:
+    volumes:
+    - ./AGENTS.md:/home/agent/.codex/AGENTS.md

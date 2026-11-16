@@ -1,6 +1,18 @@
+agent:
+  type: str
+  help: Which agent should be used?
+  choices:
+    - pi
+    - opencode
+    - claude
+    - codex
+    - tau
+  default: pi
+
 _exclude:
   - '.git'
   - '.gitignore'
   - 'copier.yaml'
   - 'LICENSE'
   - 'README.md'
+  - 'templates'

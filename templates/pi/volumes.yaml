@@ -1,0 +1,5 @@
+services:
+  pi:
+    volumes:
+    - ./AGENTS.md:/home/agent/.pi/agent/AGENTS.md
+    - ./models.json:/home/agent/.pi/agent/models.json

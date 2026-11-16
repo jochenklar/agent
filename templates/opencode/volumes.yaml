@@ -1,0 +1,5 @@
+services:
+  opencode:
+    volumes:
+    - ./AGENTS.md:/home/agent/.config/opencode/AGENTS.md
+    - ./opencode.json:/home/agent/.config/opencode/opencode.json

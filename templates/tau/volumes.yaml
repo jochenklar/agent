@@ -1,0 +1,5 @@
+services:
+  tau:
+    volumes:
+    - ./AGENTS.md:/home/agent/.tau/AGENTS.md
+    - ./catalog.toml:/home/agent/.tau/catalog.toml
