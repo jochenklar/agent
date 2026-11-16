@@ -14,15 +14,34 @@ ENV USER=agent \
 
 RUN apk add --no-cache --update \
     bash \
+    coreutils \
     curl \
+    diffutils \
     fd \
+    file \
+    findutils \
+    gawk \
     git \
+    github-cli \
     grep \
+    gzip \
     jq \
+    less \
+    make \
     nodejs \
     npm \
+    patch \
+    procps-ng \
     ripgrep \
-    uv
+    sed \
+    tar \
+    tree \
+    unzip \
+    util-linux \
+    uv \
+    xz \
+    yq-go \
+    zip
 
 RUN addgroup -g "${GID}" -S "${GROUP}"
 RUN adduser -S "${USER}" -u "${UID}" -G "${GROUP}" -h "${HOME}" -s "/bin/sh"

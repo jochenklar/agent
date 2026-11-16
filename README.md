@@ -24,11 +24,14 @@ make clean   # remove the agent's container and its home volume
 make mlx     # start an MLX server on the host at port 4040 (needs mlx_lm)
 ```
 
-The agent runs in a container based on Alpine with `bash`, `git`, `curl`, `jq`,
-`ripgrep`, `fd`, Node.js/npm and `uv` (with a Python 3.14 virtualenv in
-`/opt/env`). The workspace is mounted at `/home/agent/workspace`. The home
-directory of the container is a named docker volume per agent, so logins and
-sessions persist between runs until `make clean` is used.
+The agent runs in a container based on Alpine with `bash`, `git`, `gh`, `curl`,
+`jq`, `yq`, `ripgrep`, `fd`, `make`, Node.js/npm and `uv` (with a Python
+3.14 virtualenv in `/opt/env`). The GNU versions of `coreutils`, `findutils`,
+`sed`, `grep`, `awk`, `diff` and `ps` replace the BusyBox tools, since agents
+usually expect their flags. The workspace is mounted at
+`/home/agent/workspace`. The home directory of the container is a named docker
+volume per agent, so logins and sessions persist between runs until `make
+clean` is used.
 
 The containers run with all capabilities dropped and `no-new-privileges`, and
 the agents are started in their auto-approve modes (`claude
